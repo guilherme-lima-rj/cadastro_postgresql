@@ -5,7 +5,9 @@ import requests
 st.subheader("Consultar Cliente")
 
 response = requests.get("http://backend:8000/customers/")
-if response.status_code == 200:
+if response.status_code != 200:
+    st.error(f"Erro ao se conectar. Erro :{response.status_code}")
+else:
     customers = response.json()
     df = pd.DataFrame(customers)
 
