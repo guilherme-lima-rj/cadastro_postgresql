@@ -3,16 +3,22 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from dotenv import load_dotenv
 import os
+import streamlit as st
 
 # Carregar variáveis de ambiente do arquivo .env
 load_dotenv()
 
 # Configurações da conexão
-host_name = os.getenv('HOST_NAME')
-database_name = os.getenv('DATABASE_NAME')
-user_name = os.getenv('USER_NAME')
-password = os.getenv('PASSWORD')
-service = os.getenv('SERVICE')
+host_name = st.secrets['HOST_NAME']
+database_name = st.secrets['DATABASE_NAME']
+user_name = st.secrets['USER_NAME']
+password = st.secrets['PASSWORD']
+service = st.secrets['SERVICE']
+# host_name = os.getenv('HOST_NAME')
+# database_name = os.getenv('DATABASE_NAME')
+# user_name = os.getenv('USER_NAME')
+# password = os.getenv('PASSWORD')
+# service = os.getenv('SERVICE')
 
 SQLALCHEMY_DATABASE_URL = f"{service}://{user_name}:{password}@{host_name}/{database_name}"
 #SQLALCHEMY_DATABASE_URL="postgresql://user123:xiasxTUgTYHJcX7zWsBmniWgr68UAg1F@dpg-cro1aeg8fa8c738m6sh0-a.oregon-postgres.render.com/database_glxz"
