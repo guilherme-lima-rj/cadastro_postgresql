@@ -14,8 +14,8 @@ user_name = os.getenv('USER_NAME')
 password = os.getenv('PASSWORD')
 service = os.getenv('SERVICE')
 
-SQLALCHEMY_DATABASE_URL = f"{service}://{user_name}:{password}@{host_name}/{database_name}"
-#SQLALCHEMY_DATABASE_URL="postgresql://user123:xiasxTUgTYHJcX7zWsBmniWgr68UAg1F@dpg-cro1aeg8fa8c738m6sh0-a.oregon-postgres.render.com/database_glxz"
+#SQLALCHEMY_DATABASE_URL = f"{service}://{user_name}:{password}@{host_name}/{database_name}"
+SQLALCHEMY_DATABASE_URL="postgresql://user123:xiasxTUgTYHJcX7zWsBmniWgr68UAg1F@dpg-cro1aeg8fa8c738m6sh0-a.oregon-postgres.render.com/database_glxz"
 #engine = create_engine(POSTGRES_DATABASE_URL)
 
 
