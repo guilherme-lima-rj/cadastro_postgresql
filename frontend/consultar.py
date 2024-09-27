@@ -12,7 +12,7 @@ def chamar_consultar():
     st.subheader("Consultar Cliente")
 
     response = requests.get(f"{backend_url}/customers/")
-    #response = requests.get("https://backend-cadastro-fj2o.onrender.com/customers/")
+    
     if response.status_code != 200:
         st.error(f"Erro ao se conectar. Erro :{response.status_code}")
     else:
@@ -76,7 +76,6 @@ def chamar_consultar():
                             else:  # Assuming 'ID'
                                 df_filtrado = df[df['id'].astype(str).str.contains(buscar_nome, case=False, na=False)]
                         
-            #        st.subheader("Clientes Encontrados")
                     if not df_filtrado.empty:
                         st.dataframe(df_filtrado, hide_index=True)
                     else:
@@ -86,10 +85,7 @@ def chamar_consultar():
                 todos_clientes = st.button("Ver Todos os clientes")
                 if todos_clientes:
                     # Exibe o DataFrame sem o índice
-                    st.dataframe(df, hide_index=True) 
-                # else:
-                #    show_response_message(response)
-                    
+                    st.dataframe(df, hide_index=True)                     
         
     
     

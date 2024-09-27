@@ -1,6 +1,12 @@
 import streamlit as st
 import pandas as pd
 import requests
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+backend_url = os.getenv('BACKEND_URL')
 
 def chamar_deletar():
     st.subheader("Deletar Cliente")
@@ -9,7 +15,7 @@ def chamar_deletar():
     # Botão para consultar cliente
     if st.button("Buscar"):
         df = pd.DataFrame()
-        response = requests.get(f"http://backend:8000/customer/{id_cliente}")
+        response = requests.get(f"{backend_url}/customer/{id_cliente}")
         if response.status_code == 200:
             customer = response.json()
             df = pd.DataFrame([customer])
@@ -49,7 +55,7 @@ def chamar_deletar():
         st.text_input("Criado em:",value=st.session_state["df_cliente_del"].at[0,"created_at"], disabled=True, key="input_created_at")      
 
         if st.button("Deletar Cliente"):
-            response = requests.delete(f"http://backend:8000/customer/{st.session_state['id_cliente_del']}")
+            response = requests.delete(f"{backend_url}/customer/{st.session_state['id_cliente_del']}")
             if response.status_code == 200:
                 st.success("Cliente deletado com sucesso!")
                 del st.session_state['df_cliente_del']

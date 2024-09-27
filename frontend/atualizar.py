@@ -1,7 +1,12 @@
 import streamlit as st
 import pandas as pd
 import requests
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
+
+backend_url = os.getenv('BACKEND_URL')
 
 def chamar_atualizar():
     st.subheader("Atualizar Cliente")
@@ -12,7 +17,7 @@ def chamar_atualizar():
 
     if buscar_cliente_bt:
         df = pd.DataFrame()
-        response = requests.get(f"http://backend:8000/customer/{id_cliente}")
+        response = requests.get(f"{backend_url}/customer/{id_cliente}")
         if response.status_code == 200:
             customer = response.json()
             df = pd.DataFrame([customer])
@@ -66,7 +71,7 @@ def chamar_atualizar():
             
                 if cliente_atualizado:
                     response = requests.put(
-                            f"http://backend:8000/customer/{st.session_state['id_cliente_upd']}", json=cliente_atualizado
+                            f"{backend_url}/customer/{st.session_state['id_cliente_upd']}", json=cliente_atualizado
                         )            
                     
                     if response.status_code == 200:

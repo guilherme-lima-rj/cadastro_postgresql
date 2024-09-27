@@ -35,10 +35,12 @@ with st.sidebar:
         }
     )
 
-
+col1, col2, col3 = st.columns()
 if menu == "Home":
     st.header("Gerenciador de Clientes")
-    st.title("Bem-vindo!")
+    with col3:
+        st.title("Bem-vindo!")
+        
 if menu == "Consultar":
     chamar_consultar()
 if menu == "Inserir":

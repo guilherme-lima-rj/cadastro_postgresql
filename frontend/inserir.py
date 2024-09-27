@@ -1,6 +1,12 @@
 import streamlit as st
 import pandas as pd
 import requests
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+backend_url = os.getenv('BACKEND_URL')
 
 def chamar_inserir():
     st.subheader("Inserir Cliente")
@@ -17,7 +23,7 @@ def chamar_inserir():
                 st.error("Os campos Nome, Sobrenome e Telefone, não podem estar vazios!")
             else:
                 response = requests.post(
-                    "http://backend:8000/customer/",
+                    f"{backend_url}/customer/",
                     json={
                         "name": name,
                         "surname": surname,
@@ -29,4 +35,3 @@ def chamar_inserir():
                     st.success("Cliente Inserido com sucesso!")
                 else:
                     st.error("Erro ao tentar inserir cliente.")
-            #show_response_message(response)
