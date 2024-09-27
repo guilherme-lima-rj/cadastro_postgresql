@@ -35,9 +35,11 @@ with st.sidebar:
         }
     )
 
-col1, col2, col3 = st.columns(3)
+
 if menu == "Home":
     st.header("Gerenciador de Clientes")
+
+    col1, col2, col3 = st.columns([1,3,1])
     with col2:
         st.title("Bem-vindo!")
 
