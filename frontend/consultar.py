@@ -1,8 +1,8 @@
 import streamlit as st
 import pandas as pd
 import requests
-from dotenv import load_dotenv
-import os
+#from dotenv import load_dotenv
+#import os
 
 #load_dotenv()
 
