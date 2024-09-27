@@ -1,11 +1,18 @@
 import streamlit as st
 import pandas as pd
 import requests
+from dotenv import load_dotenv
+import os
+
+#load_dotenv()
+
+#backend_url = os.getenv('BACKEND_URL')
 
 def chamar_consultar():
     st.subheader("Consultar Cliente")
 
-    response = requests.get("http://backend:8000/customers/")
+    #response = requests.get(f"{backend_url}/customers/")
+    response = requests.get("https://backend-cadastro-fj2o.onrender.com/customers/")
     if response.status_code != 200:
         st.error(f"Erro ao se conectar. Erro :{response.status_code}")
     else:
