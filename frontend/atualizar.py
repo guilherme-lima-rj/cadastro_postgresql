@@ -25,22 +25,22 @@ def chamar_atualizar():
             df = df[
                 [
                     "id",
-                    "name",
-                    "surname",
+                    "nome",
+                    "sobrenome",
                     "email",
-                    "phone",
-                    "created_at",
+                    "telefone",
+                    "criado_em",
                 ]
             ]
 
             # Concatenando Nome e Sobrenome
-            df["full_name"] = df["name"] + " " + df["surname"]
+            df["full_name"] = df["nome"] + " " + df["sobrenome"]
 
-            # Convertendo a coluna 'created_at' para datetime
-            df["created_at"] = pd.to_datetime(df["created_at"])
+            # Convertendo a coluna 'criado_em' para datetime
+            df["criado_em"] = pd.to_datetime(df["criado_em"])
 
-            # Formatando o campo 'created_at'
-            df["created_at"] = df["created_at"].dt.strftime('%Y-%m-%d %H:%M:%S')
+            # Formatando o campo 'criado_em'
+            df["criado_em"] = df["criado_em"].dt.strftime('%Y-%m-%d %H:%M:%S')
 
         else:
             st.error("Cliente não encontrado!")
@@ -54,20 +54,20 @@ def chamar_atualizar():
         with st.form("update_customer"):
             col1,col2=st.columns([2,3])
             with col1:
-                new_name=st.text_input("Nome:",value=st.session_state["df_cliente_upd"].at[0,"name"], disabled=False, key="input_name")
+                new_name=st.text_input("Nome:",value=st.session_state["df_cliente_upd"].at[0,"nome"], disabled=False, key="input_name")
                 new_email=st.text_input("E-mail:",value=st.session_state["df_cliente_upd"].at[0,"email"], disabled=False, key="input_email")    
             with col2:
-                new_surname=st.text_input("Sobrenome:",value=st.session_state["df_cliente_upd"].at[0,"surname"], disabled=False, key="input_surname")       
-                new_phone=st.text_input("Telefone:",value=st.session_state["df_cliente_upd"].at[0,"phone"], disabled=False, key="input_phone")        
+                new_surname=st.text_input("Sobrenome:",value=st.session_state["df_cliente_upd"].at[0,"sobrenome"], disabled=False, key="input_surname")       
+                new_phone=st.text_input("Telefone:",value=st.session_state["df_cliente_upd"].at[0,"telefone"], disabled=False, key="input_phone")        
 
             atualizar_cliente_bt = st.form_submit_button("Atualizar Cliente")
             
             if atualizar_cliente_bt:
                 cliente_atualizado = {}
-                cliente_atualizado["name"] = new_name
-                cliente_atualizado["surname"] = new_surname
+                cliente_atualizado["nome"] = new_name
+                cliente_atualizado["sobrenome"] = new_surname
                 cliente_atualizado["email"] = new_email
-                cliente_atualizado["phone"] = new_phone
+                cliente_atualizado["telefone"] = new_phone
             
                 if cliente_atualizado:
                     response = requests.put(
