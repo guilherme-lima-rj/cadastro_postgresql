@@ -4,8 +4,10 @@ import requests
 from dotenv import load_dotenv
 import os
 
+# Carrega as variáveis de ambiente do arquivo .env
 load_dotenv()
 
+# Acessa as variáveis de ambiente
 backend_url = os.getenv('BACKEND_URL')
 
 def chamar_inserir():
@@ -22,15 +24,15 @@ def chamar_inserir():
             if not name.strip() or not surname.strip() or not phone.strip():
                 st.error("Os campos Nome, Sobrenome e Telefone, não podem estar vazios!")
             else:
-                response = requests.post(
-                    f"{backend_url}/customer/",
-                    json={
-                        "name": name,
-                        "surname": surname,
-                        "email": email,
-                        "phone": phone,                    
-                    },
-                )
+                json_cliente={
+                    "name": name,
+                    "surname": surname,
+                    "email": email,
+                    "phone": phone,  
+                }
+                
+                response = requests.post(f"{backend_url}/customer/", json=json_cliente)
+
                 if response.status_code == 200:
                     st.success("Cliente Inserido com sucesso!")
                 else:

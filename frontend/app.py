@@ -5,12 +5,6 @@ from inserir import chamar_inserir
 from atualizar import chamar_atualizar
 from deletar import chamar_deletar
 
-# host_name = st.secrets["HOST_NAME"]
-# database_name = st.secrets["DATABASE_NAME"]
-# user_name = st.secrets["USER_NAME"]
-# password = st.secrets["PASSWORD"]
-# service = st.secrets["SERVICE"]
-
 st.set_page_config(
     page_title="Gerenciador de Clientes"
 )

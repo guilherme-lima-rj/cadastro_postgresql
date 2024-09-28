@@ -14,12 +14,8 @@ user_name = os.getenv('USER_NAME')
 password = os.getenv('PASSWORD')
 service = os.getenv('SERVICE')
 
+# Monta a url de conexão
 SQLALCHEMY_DATABASE_URL = f"{service}://{user_name}:{password}@{host_name}/{database_name}"
-#SQLALCHEMY_DATABASE_URL="postgresql://user123:xiasxTUgTYHJcX7zWsBmniWgr68UAg1F@dpg-cro1aeg8fa8c738m6sh0-a.oregon-postgres.render.com/database_glxz"
-#engine = create_engine(POSTGRES_DATABASE_URL)
-
-
-#SQLALCHEMY_DATABASE_URL = "postgresql://user:password@postgres/mydatabase"
 
 # Cria o motor do banco de dados, é o conecta com o banco
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
@@ -36,23 +32,3 @@ def get_db():
         yield db
     finally:
         db.close()
-
-
-
-
-
-        
-# import sqlite3
-
-# def criar_banco():
-#     conexao = sqlite3.connect('clientes.db')
-#     c = conexao.cursor()
-#     c.execute('''CREATE TABLE IF NOT EXISTS clientes (
-#                     id INTEGER PRIMARY KEY AUTOINCREMENT,
-#                     nome TEXT NOT NULL,
-#                     sobrenome TEXT NOT NULL,
-#                     email TEXT NOT NULL,
-#                     telefone TEXT NOT NULL)''')
-#     conexao.commit()
-#     conexao.close()
-

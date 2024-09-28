@@ -4,8 +4,10 @@ import requests
 from dotenv import load_dotenv
 import os
 
+# Carrega as variáveis de ambiente do arquivo .env
 load_dotenv()
 
+# Acessa as variáveis de ambiente
 backend_url = os.getenv('BACKEND_URL')
 
 def chamar_atualizar():

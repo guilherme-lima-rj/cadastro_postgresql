@@ -1,4 +1,4 @@
-from pydantic import BaseModel, PositiveFloat, EmailStr, validator, Field
+from pydantic import BaseModel, PositiveFloat, EmailStr, Field, validator
 from datetime import datetime
 from typing import Optional
 
@@ -8,6 +8,12 @@ class CustomerBase(BaseModel):
     email: Optional[EmailStr] = None
     phone: Optional[str] = None
     
+    @validator('email', pre=True, always=True)
+    def validate_email(cls, v):
+        if v is None or v == '':
+            return None
+        return v
+    
 class CustomerCreate(CustomerBase):
     pass
 
@@ -16,7 +22,7 @@ class CustomerResponse(CustomerBase):
     created_at: datetime
 
     class Config:
-        orm_mode = True #from_attributes
+        from_attributes = True #from_attributes
 
 class CustomerUpdate(BaseModel):
     name: Optional[str]= None
