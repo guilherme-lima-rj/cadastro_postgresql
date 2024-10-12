@@ -31,11 +31,24 @@ with st.sidebar:
 
 
 if menu == "Home":
-    st.header("Gerenciador de Clientes")
+    # Adicionando CSS para centralizar os textos
+    st.markdown(
+        """
+        <style>
+        .centered-header {
+            text-align: center;
+        }
+        .centered-title {
+            text-align: center;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
 
-    col1, col2, col3 = st.columns([1,3,1])
-    with col2:
-        st.title("Bem-vindo!")
+    # Aplicando as classes CSS aos elementos
+    st.markdown('<h2 class="centered-header">Gerenciador de Clientes</h2>', unsafe_allow_html=True)
+    st.markdown('<h1 class="centered-title">Bem-vindo!</h1>', unsafe_allow_html=True)
 
 if menu == "Consultar":
     chamar_consultar()
