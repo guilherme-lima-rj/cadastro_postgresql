@@ -45,33 +45,33 @@ O projeto está divido em duas pastas principais: **backend** e **frontend**. Al
 
 Segue detalhamento:  
 
-- **backend** - contêm os arquivos referentes ao módulo backend.
+    - backend - contêm os arquivos referentes ao módulo backend.
 
-  
-  - **Dockerfile**: contém as  configurações para criação de uma imagem identica ao código original do módulo **backend**.
-  - **requirements.txt**: lista todas as dependências de bibliotecas necessárias para a execução do módulo **backend**.
-  - **crud.py**: contêm as regras de negócio e o código das funções crud do projeto.
-  - **database**: utiliza o SQLAlchemy para criar e definir as configurações do banco de dados.
-  - **models**: Define as classes que representam as tabelas do banco de dados.
-  - **schemas.py**:  Define a estrutura dos dados que serão validados e serializados. Utilizado para garantir que os dados recebidos e enviados pela API estejam no formato correto
-  - **routes**: Define as rotas da API, ou seja, define as funções que respondem às requisições HTTP.
-  - **main.py**: arquivo principal do módulo **backend**, utilizado pelo Dockerfile para configurar e iniciar uma aplicação web utilizando toda a estrutura criada nos arquivos descritos acima.
-  - **EXEMPLO.env**: EXEMPLO de arquivo de configuração de variáveis de ambiente. É necessário preencher as variáveis com as suas credenciais do banco de dados. Após isto, o arquivo deverá ser renomeado para **.env"".
+    
+        - **Dockerfile**: contém as  configurações para criação de uma imagem identica ao código original do módulo **backend**.
+        - **requirements.txt**: lista todas as dependências de bibliotecas necessárias para a execução do módulo **backend**.
+        - **crud.py**: contêm as regras de negócio e o código das funções crud do projeto.
+        - **database**: utiliza o SQLAlchemy para criar e definir as configurações do banco de dados.
+        - **models**: Define as classes que representam as tabelas do banco de dados.
+        - **schemas.py**:  Define a estrutura dos dados que serão validados e serializados. Utilizado para garantir que os dados recebidos e enviados pela API estejam no formato correto
+        - **routes**: Define as rotas da API, ou seja, define as funções que respondem às requisições HTTP.
+        - **main.py**: arquivo principal do módulo **backend**, utilizado pelo Dockerfile para configurar e iniciar uma aplicação web utilizando toda a estrutura criada nos arquivos descritos acima.
+        - **EXEMPLO.env**: EXEMPLO de arquivo de configuração de variáveis de ambiente. É necessário preencher as variáveis com as suas credenciais do banco de dados. Após isto, o arquivo deverá ser renomeado para **.env"".
 
-- **backend** - contêm os arquivos referentes ao módulo backend.
+    - **backend** - contêm os arquivos referentes ao módulo backend.
 
-  - **Dockerfile**: contém as  configurações para criação de uma imagem identica ao código original do módulo **frontend**.
-  - **requirements.txt**: lista todas as dependências de bibliotecas necessárias para a execução do módulo **frontend**.
-  - **app.py**: arquivo que define a página principal do módulo **frontend**, utilizado pelo Dockerfile para configurar e iniciar uma aplicação web via **Streamlit**.
-  - **atualizar**: define os componentes do formulário de atualização de dados do cliente.
-  - **consultar**: define os componentes do formulário de consulta de dados do cliente.
-  - **deletar**: define os componentes do formulário de deleção de dados do cliente.
-  - **inserir**: define os componentes do formulário de inclusão de dados do cliente.
-  - **EXEMPLO.env**: EXEMPLO de arquivo de configuração de variáveis de ambiente. É necessário preencher a variável com o endereço web gerado pelo backend(normalmente o endereço local é http://backend:8000/). Após isto, o arquivo deverá ser renomeado para **.env"".
+    - **Dockerfile**: contém as  configurações para criação de uma imagem identica ao código original do módulo **frontend**.
+    - **requirements.txt**: lista todas as dependências de bibliotecas necessárias para a execução do módulo **frontend**.
+    - **app.py**: arquivo que define a página principal do módulo **frontend**, utilizado pelo Dockerfile para configurar e iniciar uma aplicação web via **Streamlit**.
+    - **atualizar**: define os componentes do formulário de atualização de dados do cliente.
+    - **consultar**: define os componentes do formulário de consulta de dados do cliente.
+    - **deletar**: define os componentes do formulário de deleção de dados do cliente.
+    - **inserir**: define os componentes do formulário de inclusão de dados do cliente.
+    - **EXEMPLO.env**: EXEMPLO de arquivo de configuração de variáveis de ambiente. É necessário preencher a variável com o endereço web gerado pelo backend(normalmente o endereço local é http://backend:8000/). Após isto, o arquivo deverá ser renomeado para **.env"".
 
-- **README.md**: Documentação do projeto.
-- **docker-compose.yml**: O arquivo docker-compose.yml é utilizado para definir e gerenciar aplicações que utilizam múltiplos contêineres Docker. Ele permite que você configure todos os serviços necessários para a sua aplicação em um único arquivo YAML. Este arquivo simplifica a orquestração de múltiplos contêineres, garantindo que todos os componentes da sua aplicação sejam configurados e executados de maneira consistente.
-- **.python-version**: arquivo que especifica a versão do Python usada no projeto.
+    - **README.md**: Documentação do projeto.
+    - **docker-compose.yml**: O arquivo docker-compose.yml é utilizado para definir e gerenciar aplicações que utilizam múltiplos contêineres Docker. Ele permite que você configure todos os serviços necessários para a sua aplicação em um único arquivo YAML. Este arquivo simplifica a orquestração de múltiplos contêineres, garantindo que todos os componentes da sua aplicação sejam configurados e executados de maneira consistente.
+    - **.python-version**: arquivo que especifica a versão do Python usada no projeto.
 
 ## Passo a passo de instalação
 
