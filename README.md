@@ -1,7 +1,7 @@
 <div align="center">
   
   <h1>CRUD</h1>
-  <h3>Gerenciamento de Dados de Clientes</h3>
+  <h3>Gerenciador de Clientes</h3>
 </div>
 <div align="center">
     <a href="https://www.python.org/" target="_blank"><img src="https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white" target="_blank"></a>
