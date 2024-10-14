@@ -13,9 +13,9 @@
 
 ## Visão Geral
 
-Este projeto visa desenvolver uma aplicação CRUD (Create, Read, Update, Delete) utilizando tecnologias modernas e eficientes. O backend será construído com FastAPI, um framework de alta performance para criação de APIs. Para a interação com o banco de dados PostgreSQL, utilizaremos SQLAlchemy, enquanto Pydantic será responsável pela validação dos dados.
+Este projeto cria uma aplicação CRUD (Create, Read, Update, Delete) utilizando tecnologias modernas e eficientes. O backend é construído com FastAPI, que é um framework de alta performance para criação de APIs. Para a interação com o banco de dados PostgreSQL, utilizaremos SQLAlchemy, enquanto Pydantic será responsável pela validação dos dados.
 
-A interface web será desenvolvida com Streamlit, que facilita a criação de dashboards e aplicações web interativas. Além disso, a aplicação será containerizada com Docker, garantindo um ambiente de desenvolvimento consistente e simplificando a implantação em diferentes ambientes.
+A interface web é desenvolvida com Streamlit, que facilita a criação de dashboards e aplicações web interativas. Além disso, a aplicação é containerizada com Docker, garantindo um ambiente de desenvolvimento consistente e simplificando a implantação em diferentes ambientes.
 
 ### Versão do Python
     3.12.1
@@ -45,7 +45,7 @@ O projeto está divido em duas pastas principais: **backend** e **frontend**. Al
 
 Segue detalhamento:  
 
-- **backend** - contêm os arquivos referentes ao módulo backend.
+- **backend** - contêm os arquivos referentes ao módulo **backend**.
   - **Dockerfile**: contém as  configurações para criação de uma imagem identica ao código original do módulo **backend**.
   - **requirements.txt**: lista todas as dependências de bibliotecas necessárias para a execução do módulo **backend**.
   - **crud.py**: contêm as regras de negócio e o código das funções crud do projeto.
