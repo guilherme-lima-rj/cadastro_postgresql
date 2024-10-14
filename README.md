@@ -13,7 +13,9 @@
 
 ## Visão Geral
 
-Este projeto tem como objetivo criar uma aplicação CRUD (create, read, update and delete) utilizando FastAPI para o backend, SQLAlchemy para a interação com o banco de dados PostgreSQL, Pydantic para validação de dados, Streamlit para a interface web e Docker para containerização. FastAPI é um framework moderno e de alta performance para construção de APIs, enquanto Streamlit facilita a criação de dashboards e aplicações web interativas. Docker garante que o ambiente de desenvolvimento seja consistente e facilita a implantação em diferentes ambientes.
+Este projeto visa desenvolver uma aplicação CRUD (Create, Read, Update, Delete) utilizando tecnologias modernas e eficientes. O backend será construído com FastAPI, um framework de alta performance para criação de APIs. Para a interação com o banco de dados PostgreSQL, utilizaremos SQLAlchemy, enquanto Pydantic será responsável pela validação dos dados.
+
+A interface web será desenvolvida com Streamlit, que facilita a criação de dashboards e aplicações web interativas. Além disso, a aplicação será containerizada com Docker, garantindo um ambiente de desenvolvimento consistente e simplificando a implantação em diferentes ambientes.
 
 #### Versão do Python
     3.12.1
@@ -36,6 +38,28 @@ Este projeto tem como objetivo criar uma aplicação CRUD (create, read, update 
         • requests
         • streamlit-option-menu
         • python-dotenv
+
+#### Estrutura do projeto
+
+## Descrição das Pastas e Arquivos
+
+- **app/**: Contém o código principal da aplicação.
+  - **main.py**: Ponto de entrada da aplicação.
+  - **models/**: Define os modelos de dados.
+  - **routes/**: Define as rotas da API.
+  - **utils/**: Contém funções utilitárias.
+
+- **tests/**: Contém os testes unitários.
+  - **test_main.py**: Testes para o arquivo `main.py`.
+  - **test_user.py**: Testes para o modelo `user.py`.
+
+- **.env**: Arquivo de configuração de variáveis de ambiente.
+- **.gitignore**: Arquivo que especifica quais arquivos e pastas devem ser ignorados pelo Git.
+- **Dockerfile**: Arquivo de configuração para containerização com Docker.
+- **README.md**: Documentação do projeto.
+- **requirements.txt**: Lista de dependências do projeto.
+- **setup.py**: Script de configuração do pacote Python.
+
 
 ## Passo a passo de instalação
 
@@ -96,3 +120,12 @@ Após subir os contêineres, você pode acessar a aplicação no seu navegador. 
 - **Uvicorn**: Servidor ASGI para rodar a aplicação FastAPI.
 - **Streamlit**: Biblioteca para criação de interfaces web interativas.
 - **Docker**: Plataforma de containerização para criar, implantar e rodar aplicações em containers.
+
+## Contatos
+
+Para perguntas, sugestões ou feedbacks:
+
+<div>
+    <a href="www.linkedin.com/in/guilherme-limas-rj" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
+    <a href="mailto:guilherme.lima@ymail.com"><img src="https://img.shields.io/badge/-Yahoo%20Mail!-%237E1FFF?style=for-the-badge&logo=yahoo&logoColor=white" target="_blank"></a>
+</div> 
