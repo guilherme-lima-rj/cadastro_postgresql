@@ -1,19 +1,48 @@
 <div align="center">
   <h1>Criação de um Sistema CRUD</h1>
-  <h3>Python | PostgreSQL | FastAPI | SQLAlchemy | Pydantic | Streamlit | Docker</h3>
+</div>
+<div align="center">
+    <a href="https://www.python.org/" target="_blank"><img src="https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white" target="_blank"></a>
+    <a href="https://www.postgresql.org/docs/" target="_blank"><img src="https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white" target="_blank"></a>
+    <a href="https://fastapi.tiangolo.com/" target="_blank"><img src="https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi" target="_blank"></a>
+    <a href="https://streamlit.io/" target="_blank"><img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" target="_blank"></a>
+    <a href="https://www.sqlalchemy.org/" target="_blank"><img src="https://img.shields.io/badge/SQLAlchemy-323232?style=for-the-badge&logo=sqlalchemy&logoColor=white" target="_blank"></a>
+    <a href="https://pydantic-docs.helpmanual.io/" target="_blank"><img src="https://img.shields.io/badge/Pydantic-3776AB?style=for-the-badge&logo=pydantic&logoColor=white" target="_blank"></a>
+    <a href="https://docs.docker.com/" target="_blank"><img src="https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white" target="_blank"></a>
 </div>
 
 ## Visão Geral
 
 Este projeto tem como objetivo criar uma aplicação CRUD (create, read, update and delete) utilizando FastAPI para o backend, SQLAlchemy para a interação com o banco de dados PostgreSQL, Pydantic para validação de dados, Streamlit para a interface web e Docker para containerização. FastAPI é um framework moderno e de alta performance para construção de APIs, enquanto Streamlit facilita a criação de dashboards e aplicações web interativas. Docker garante que o ambiente de desenvolvimento seja consistente e facilita a implantação em diferentes ambientes.
 
+**Versão do Python:** 3.12.1
+
+**Bibliotecas principais:**
+
+    - Backend:
+        * email_validator
+        * fastapi
+        * pandas
+        * psycopg2-binary
+        * pyarrow
+        * pydantic
+        * python-dotenv
+        * SQLAlchemy
+        * uvicorn
+
+    - Frontend: 
+        * streamlit
+        * requests
+        * streamlit-option-menu
+        * python-dotenv
+
 ## Passo a passo de instalação
 
 ### 0. Pré-requisito
 
-Para executar a aplicaçãp, é necessário ter o Docker Desktop instalado em seu computador.
-Caso não tenha, baixe o docker em seu site oficial [Docker](https://www.docker.com/). Após baixá-lo, siga o passo a passo de sua instalação: [Como instalar o Docker Desktop](https://docs.docker.com/desktop/).
-O Docker será o responsável por iniciar uma instancia do banco de dados PostgreSQL, não sendo necessário a instalação dele localmente. Além isso, será responsável por criar containers para executar o Backend e Frontend da aplicação.
+Para executar a aplicação, é necessário ter o Docker Desktop instalado em seu computador.
+Caso não tenha, baixe o docker em seu [site oficial] (https://www.docker.com/). Após baixá-lo, siga o passo a passo de sua instalação: [Como instalar o Docker Desktop](https://docs.docker.com/desktop/).
+O Docker será o responsável por iniciar uma instância do banco de dados PostgreSQL, não sendo necessário a instalação dele localmente. Além disso, será responsável por criar containers para executar o Backend e Frontend da aplicação.
 
 ### 1. Clonar o repositório
 
