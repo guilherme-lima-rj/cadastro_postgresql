@@ -15,26 +15,27 @@
 
 Este projeto tem como objetivo criar uma aplicação CRUD (create, read, update and delete) utilizando FastAPI para o backend, SQLAlchemy para a interação com o banco de dados PostgreSQL, Pydantic para validação de dados, Streamlit para a interface web e Docker para containerização. FastAPI é um framework moderno e de alta performance para construção de APIs, enquanto Streamlit facilita a criação de dashboards e aplicações web interativas. Docker garante que o ambiente de desenvolvimento seja consistente e facilita a implantação em diferentes ambientes.
 
-**Versão do Python:** 3.12.1
+#### Versão do Python
+    3.12.1
 
-**Bibliotecas principais:**
+#### Bibliotecas principais
 
     - Backend:
-        * email_validator
-        * fastapi
-        * pandas
-        * psycopg2-binary
-        * pyarrow
-        * pydantic
-        * python-dotenv
-        * SQLAlchemy
-        * uvicorn
+        • email_validator
+        • fastapi
+        • pandas
+        • psycopg2-binary
+        • pyarrow
+        • pydantic
+        • python-dotenv
+        • SQLAlchemy
+        • uvicorn
 
     - Frontend: 
-        * streamlit
-        * requests
-        * streamlit-option-menu
-        * python-dotenv
+        • streamlit
+        • requests
+        • streamlit-option-menu
+        • python-dotenv
 
 ## Passo a passo de instalação
 
