@@ -50,17 +50,20 @@ def chamar_deletar():
             st.session_state['id_cliente_del'] = id_cliente
 
     # Verifica se o cliente foi encontrado e exibe as informações
-    if 'df_cliente_del' in st.session_state:    
-        st.text_input("Nome:",value=st.session_state["df_cliente_del"].at[0,"full_name"], disabled=True, key="input_full_name")
-        st.text_input("E-mail:",value=st.session_state["df_cliente_del"].at[0,"email"], disabled=True, key="input_email")
-        st.text_input("Telefone:",value=st.session_state["df_cliente_del"].at[0,"phone"], disabled=True, key="input_phone")
-        st.text_input("Criado em:",value=st.session_state["df_cliente_del"].at[0,"created_at"], disabled=True, key="input_created_at")      
+    if 'df_cliente_del' in st.session_state:  
+        with st.form("delete_customer"):
+            st.text_input("Nome:",value=st.session_state["df_cliente_del"].at[0,"full_name"], disabled=True, key="input_full_name")
+            st.text_input("E-mail:",value=st.session_state["df_cliente_del"].at[0,"email"], disabled=True, key="input_email")
+            st.text_input("Telefone:",value=st.session_state["df_cliente_del"].at[0,"phone"], disabled=True, key="input_phone")
+            st.text_input("Criado em:",value=st.session_state["df_cliente_del"].at[0,"created_at"], disabled=True, key="input_created_at")      
 
-        if st.button("Deletar Cliente"):
-            response = requests.delete(f"{backend_url}/customer/{st.session_state['id_cliente_del']}")
-            if response.status_code == 200:
-                st.success("Cliente deletado com sucesso!")
-                del st.session_state['df_cliente_del']
-                del st.session_state['id_cliente_del']        
-            else:
-                st.error("Cliente não deletado!")
+            atualizar_cliente_bt = st.form_submit_button("Deletar Cliente")
+
+            if atualizar_cliente_bt:
+                response = requests.delete(f"{backend_url}/customer/{st.session_state['id_cliente_del']}")
+                if response.status_code == 200:
+                    st.success("Cliente deletado com sucesso!")
+                    del st.session_state['df_cliente_del']
+                    del st.session_state['id_cliente_del']        
+                else:
+                    st.error("Cliente não deletado!")
