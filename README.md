@@ -139,7 +139,7 @@ docker ps
 ```
 
 ### 6. Acessar a aplicação
-Após subir os contêineres, você pode acessar a aplicação no seu navegador. A aplicação estará disponível em http://localhost:8000 para o backend FastAPI e em http://localhost:8501 para a interface Streamlit.
+Após subir os contêineres, você pode acessar a aplicação no seu navegador. A aplicação estará disponível em http://localhost:8000/docs para o backend FastAPI e em http://localhost:8501 para a interface Streamlit.
 
 ## Ferramentas e Tecnologias
 
