@@ -4,8 +4,8 @@ import requests
 from dotenv import load_dotenv
 import os
 
-# Carrega as variáveis de ambiente do arquivo .env
-load_dotenv()
+# Carrega o arquivo .env usando um caminho relativo
+load_dotenv(os.path.join(os.path.dirname(__file__), '..', '.env'))
 
 # Acessa as variáveis de ambiente
 backend_url = os.getenv('BACKEND_URL')
