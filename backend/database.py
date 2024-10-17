@@ -4,8 +4,8 @@ from sqlalchemy.orm import sessionmaker
 from dotenv import load_dotenv
 import os
 
-# Carregar variáveis de ambiente do arquivo .env
-load_dotenv()
+# Carrega o arquivo .env usando um caminho relativo
+load_dotenv(os.path.join(os.path.dirname(__file__), '..', '.env'))
 
 # Configurações da conexão
 host_name = os.getenv('HOST_NAME')
