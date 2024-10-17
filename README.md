@@ -64,6 +64,7 @@ Segue detalhamento:
 
 - **backend**: pasta que contém os arquivos referentes ao módulo **backend**.
   - **Dockerfile**: arquivo que contém as  configurações para criação de uma imagem idêntica ao código original do módulo **backend**.
+  - **.dockerignore**: arquivo que especifica uma lista de arquivos e diretórios que o Docker deve ignorar durante o processo de build. 
   - **requirements.txt**: arquivo que lista todas as dependências de bibliotecas necessárias para a execução do módulo **backend**.
   - **crud.py**: arquivo que contém as regras de negócio e o código das funções de inserção, atualização, consulta e deleção de dados do projeto.
   - **database.py**: arquivo que utiliza o SQLAlchemy para criar e definir as configurações do banco de dados.
@@ -71,18 +72,19 @@ Segue detalhamento:
   - **schemas.py**:  arquivo que define a estrutura dos dados que serão validados e serializados. Utilizado para garantir que os dados recebidos e enviados pela API estejam no formato correto.
   - **routes.py**: arquivo que define as rotas da API, ou seja, define as funções que respondem às requisições HTTP.
   - **main.py**: arquivo principal do módulo **backend**, utilizado pelo Dockerfile para configurar e iniciar uma aplicação web utilizando toda a estrutura criada nos arquivos descritos acima.
-  - **EXEMPLO.env**: arquivo de exemplo de configuração de variáveis de ambiente. É necessário preencher as variáveis com as suas credenciais do banco de dados. Após isto, o arquivo deverá ser renomeado para **.env**.
 
 - **backend**: pasta que contém os arquivos referentes ao módulo **backend**.
   - **Dockerfile**: arquivo que contém as  configurações para criação de uma imagem idêntica ao código original do módulo **frontend**.
+  - **.dockerignore**: arquivo que especifica uma lista de arquivos e diretórios que o Docker deve ignorar durante o processo de build.
   - **requirements.txt**: arquivo que lista todas as dependências de bibliotecas necessárias para a execução do módulo **frontend**.
   - **app.py**: arquivo que define a página principal do módulo **frontend**, utilizado pelo Dockerfile para configurar e iniciar uma aplicação web via **Streamlit**.
   - **atualizar.py**: arquivo que define os componentes do formulário de atualização de dados do cliente.
   - **consultar.py**: arquivo que define os componentes do formulário de consulta de dados do cliente.
   - **deletar.py**: arquivo que define os componentes do formulário de deleção de dados do cliente.
   - **inserir.py**: arquivo que define os componentes do formulário de inclusão de dados do cliente.
-  - **EXEMPLO.env**: arquivo de exemplo de configuração de variáveis de ambiente. É necessário preencher a variável com o endereço web gerado pelo backend (normalmente o endereço local é http://backend:8000/). Após isso, o arquivo deverá ser renomeado para **.env**.
 
+- **.gitignore**: arquivo utilizado para especificar quais arquivos e diretórios o Git deve ignorar em um repositório. 
+- **EXEMPLO.env**: arquivo de exemplo de configuração de variáveis de ambiente. Altere os valores, caso queira. Após isso, o arquivo deverá ser renomeado para **.env**.
 - **.python-version**: arquivo que especifica a versão do Python usada no projeto.
 - **README.md**: arquivo de documentação do projeto.
 - **docker-compose.yml**: arquivo utilizado para definir e gerenciar aplicações que utilizam múltiplos contêineres Docker. Ele permite que você configure todos os serviços necessários para a sua aplicação em um único arquivo YAML. Este arquivo simplifica a orquestração de múltiplos contêineres, garantindo que todos os componentes da sua aplicação sejam configurados e executados de maneira consistente.
@@ -111,20 +113,23 @@ cd cadastro_postgresql
 ```
 ### 3. Defina suas variáveis de ambiente
 
-Visando aumentar a **segurança** e a **modularidade** do projeto, cada módulo da aplicação terá seu próprio arquivo de variáveis de ambiente. Isto facilita a manutenção e a atualização de variáveis específicas para cada parte do projeto.
+1 - Edite o arquivo "EXEMPLO.env", que se encontra na raiz do projeto, com suas credenciais do banco de dados PostgreSQL e o endereço do serviço backend, que por padrão é http://backend:8000/.
 
-Entre na pasta **Backend** e edite o arquivo "EXEMPLO.env" com suas credenciais do banco de dados PostgreSQL e renomeie para ".env".
-
-Entre na pasta **Frontend** e edite o arquivo "EXEMPLO.env" com o endereço local utilizado pelo **uvicorn** (normalmente o endereço local é http://backend:8000/), e renomeie para ".env".
+2 - Renomeie o arquivo para ".env".
 
 ### 4. Subir o ambiente com Docker Compose
 
-Após instalar as dependências, você pode subir o ambiente com Docker Compose. Execute o seguinte comando:
+Execute o comando abaixo para subir o ambiente com Docker Compose. 
 
 ```bash
-docker compose up
+docker-compose up -d
 ```
-Isso iniciará os contêineres Docker definidos no arquivo docker-compose.yml.
+
+**docker-compose up**: Inicia todos os serviços definidos no arquivo docker-compose.yml.
+
+**-d**: A flag -d roda os contêineres em segundo plano (modo "detached").
+
+Então, basicamente, ele inicia os serviços definidos no arquivo docker-compose.yml e os mantém rodando em segundo plano (isto permite  continuar usando o terminal enquanto os serviços estão em execução).
 
 ### 5. Verificar se os contêineres estão rodando
 Para verificar se os contêineres estão rodando corretamente, execute:
